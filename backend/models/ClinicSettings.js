@@ -118,54 +118,105 @@ const clinicSettingsSchema = new mongoose.Schema(
         icon: { type: String, default: 'ShieldCheck' },
       },
     ],
-    whyChooseUs: [
-      {
-        number: { type: String, default: '01' },
-        title: { type: String, default: 'Experienced Dental Surgeon' },
-        description: { type: String, default: 'B.D.S. Dental Surgeon with 6+ years of clinical excellence and 2,500+ implants placed.' },
-        icon: { type: String, default: 'UserCheck' },
-      },
-      {
-        number: { type: String, default: '02' },
-        title: { type: String, default: 'Advanced Tech' },
-        description: { type: String, default: 'Digital X-rays, intra-oral scanners & rotary endodontics.' },
-        icon: { type: String, default: 'Cpu' },
-      },
-      {
-        number: { type: String, default: '03' },
-        title: { type: String, default: 'Sterilised Setup' },
-        description: { type: String, default: 'Hospital-grade autoclave & one-time-use disposables.' },
-        icon: { type: String, default: 'Shield' },
-      },
-      {
-        number: { type: String, default: '04' },
-        title: { type: String, default: 'Painless Care' },
-        description: { type: String, default: 'Modern anaesthesia and gentle techniques — even kids love us.' },
-        icon: { type: String, default: 'HeartPulse' },
-      },
-      {
-        number: { type: String, default: '05' },
-        title: { type: String, default: 'Family Friendly' },
-        description: { type: String, default: 'Care for kids, adults and seniors under one roof.' },
-        icon: { type: String, default: 'Smile' },
-      },
-      {
-        number: { type: String, default: '06' },
-        title: { type: String, default: 'Smile Guarantee' },
-        description: { type: String, default: "If you're not happy with the result, we make it right." },
-        icon: { type: String, default: 'Sparkles' },
-      },
-    ],
-    warningSigns: [
-      { title: { type: String, default: 'Tooth Pain' }, description: { type: String, default: 'Sharp ache or throbbing' }, icon: { type: String, default: 'Zap' } },
-      { title: { type: String, default: 'Bleeding Gums' }, description: { type: String, default: 'While brushing or flossing' }, icon: { type: String, default: 'AlertCircle' } },
-      { title: { type: String, default: 'Sensitivity' }, description: { type: String, default: 'To hot, cold or sweet' }, icon: { type: String, default: 'Thermometer' } },
-      { title: { type: String, default: 'Bad Breath' }, description: { type: String, default: "That just won't fade" }, icon: { type: String, default: 'Wind' } },
-      { title: { type: String, default: 'Loose Teeth' }, description: { type: String, default: 'Wobbling or shifting' }, icon: { type: String, default: 'Activity' } },
-      { title: { type: String, default: 'Cavities' }, description: { type: String, default: 'Visible decay or holes' }, icon: { type: String, default: 'ShieldAlert' } },
-      { title: { type: String, default: 'Crooked Smile' }, description: { type: String, default: 'Gaps or misalignment' }, icon: { type: String, default: 'Grid' } },
-      { title: { type: String, default: 'Missing Teeth' }, description: { type: String, default: 'Time to replace' }, icon: { type: String, default: 'PlusCircle' } },
-    ],
+    whyChooseUs: {
+      type: [
+        {
+          number: { type: String, default: '01' },
+          title: { type: String, default: 'Experienced Dental Surgeon' },
+          description: { type: String, default: 'B.D.S. Dental Surgeon with 6+ years of clinical excellence and 2,500+ implants placed.' },
+          icon: { type: String, default: 'UserCheck' },
+        },
+      ],
+      default: () => [
+        {
+          number: '01',
+          title: 'Experienced Dental Surgeon',
+          description: 'B.D.S. Chief Dental Surgeon with 6+ years of clinical excellence and 2,500+ successful implant and surgical restorations.',
+          icon: 'UserCheck',
+        },
+        {
+          number: '02',
+          title: 'Advanced Tech & Digital Imaging',
+          description: 'Equipped with digital RVG X-rays, intra-oral cameras, electronic apex locators and painless rotary endodontics.',
+          icon: 'Cpu',
+        },
+        {
+          number: '03',
+          title: 'Class-B Hospital Sterilisation',
+          description: 'Hospital-grade Class-B autoclaving, sealed sterile pouches, and 100% disposable instruments for complete infection control.',
+          icon: 'Shield',
+        },
+        {
+          number: '04',
+          title: 'Painless Gentle Procedures',
+          description: 'Computerized localized anesthesia and gentle clinical techniques ensure completely anxiety-free visits for all ages.',
+          icon: 'HeartPulse',
+        },
+        {
+          number: '05',
+          title: 'Complete Family Dentistry',
+          description: 'From pediatric preventive dental care to full-mouth rehabilitation and dentures, we cater to every generation under one roof.',
+          icon: 'Smile',
+        },
+        {
+          number: '06',
+          title: 'Transparent Smile Guarantee',
+          description: 'Honest clinical assessments, zero hidden costs, and warranties on implants and zirconia restorations for lifetime confidence.',
+          icon: 'Sparkles',
+        },
+      ],
+    },
+    warningSigns: {
+      type: [
+        {
+          title: { type: String, default: 'Tooth Pain' },
+          description: { type: String, default: 'Sharp ache or throbbing' },
+          icon: { type: String, default: 'Zap' },
+        },
+      ],
+      default: () => [
+        {
+          title: 'Tooth Pain & Throbbing',
+          description: 'Sharp or lingering ache, often signaling nerve inflammation or deep decay.',
+          icon: 'Zap',
+        },
+        {
+          title: 'Bleeding & Swollen Gums',
+          description: 'Bleeding during brushing or flossing indicates gingivitis or early periodontitis.',
+          icon: 'AlertCircle',
+        },
+        {
+          title: 'Hot & Cold Sensitivity',
+          description: 'Sharp discomfort to cold water, tea, or sweets indicating enamel erosion or nerve exposure.',
+          icon: 'Thermometer',
+        },
+        {
+          title: 'Persistent Bad Breath',
+          description: 'Halitosis that persists after brushing may point to hidden bacterial infection or gum disease.',
+          icon: 'Wind',
+        },
+        {
+          title: 'Loose or Shifting Teeth',
+          description: 'Wobbling teeth or changes in bite alignment signal underlying bone or ligament loss.',
+          icon: 'Activity',
+        },
+        {
+          title: 'Cavities & Dark Spots',
+          description: 'Visible black spots, holes, or food trap areas that worsen if left untreated.',
+          icon: 'ShieldAlert',
+        },
+        {
+          title: 'Crooked or Crowded Teeth',
+          description: 'Misaligned bite or overlapping teeth causing jaw tension and aesthetic concerns.',
+          icon: 'Grid',
+        },
+        {
+          title: 'Missing Tooth Spaces',
+          description: 'Unreplaced gaps causing adjacent teeth to tilt and jaw bone resorption.',
+          icon: 'PlusCircle',
+        },
+      ],
+    },
     smileJourney: [
       {
         step: { type: Number, default: 1 },

@@ -12,6 +12,22 @@ const getSettings = async (req, res, next) => {
       settings = await ClinicSettings.create({});
     }
 
+    // Auto-heal if whyChooseUs or warningSigns are empty in existing database record
+    let needsSave = false;
+    if (!settings.whyChooseUs || settings.whyChooseUs.length === 0) {
+      const defaultDoc = new ClinicSettings({});
+      settings.whyChooseUs = defaultDoc.whyChooseUs;
+      needsSave = true;
+    }
+    if (!settings.warningSigns || settings.warningSigns.length === 0) {
+      const defaultDoc = new ClinicSettings({});
+      settings.warningSigns = defaultDoc.warningSigns;
+      needsSave = true;
+    }
+    if (needsSave) {
+      await settings.save();
+    }
+
     res.json({
       success: true,
       data: settings,

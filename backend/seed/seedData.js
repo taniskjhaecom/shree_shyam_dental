@@ -34,6 +34,86 @@ module.exports = {
       { value: '2,500+', label: 'Implants Placed', subtext: 'Precision titanium & zirconia', icon: 'HeartPulse' },
       { value: '98%', label: 'Success Rate', subtext: 'Long-term proven outcomes', icon: 'ShieldCheck' },
     ],
+    whyChooseUs: [
+      {
+        number: '01',
+        title: 'Experienced Dental Surgeon',
+        description: 'B.D.S. Chief Dental Surgeon with 6+ years of clinical excellence and 2,500+ successful implant and surgical restorations.',
+        icon: 'UserCheck',
+      },
+      {
+        number: '02',
+        title: 'Advanced Tech & Digital Imaging',
+        description: 'Equipped with digital RVG X-rays, intra-oral cameras, electronic apex locators and painless rotary endodontics.',
+        icon: 'Cpu',
+      },
+      {
+        number: '03',
+        title: 'Class-B Hospital Sterilisation',
+        description: 'Hospital-grade Class-B autoclaving, sealed sterile pouches, and 100% disposable instruments for complete infection control.',
+        icon: 'Shield',
+      },
+      {
+        number: '04',
+        title: 'Painless Gentle Procedures',
+        description: 'Computerized localized anesthesia and gentle clinical techniques ensure completely anxiety-free visits for all ages.',
+        icon: 'HeartPulse',
+      },
+      {
+        number: '05',
+        title: 'Complete Family Dentistry',
+        description: 'From pediatric preventive dental care to full-mouth rehabilitation and dentures, we cater to every generation under one roof.',
+        icon: 'Smile',
+      },
+      {
+        number: '06',
+        title: 'Transparent Smile Guarantee',
+        description: 'Honest clinical assessments, zero hidden costs, and warranties on implants and zirconia restorations for lifetime confidence.',
+        icon: 'Sparkles',
+      },
+    ],
+    warningSigns: [
+      {
+        title: 'Tooth Pain & Throbbing',
+        description: 'Sharp or lingering ache, often signaling nerve inflammation or deep decay.',
+        icon: 'Zap',
+      },
+      {
+        title: 'Bleeding & Swollen Gums',
+        description: 'Bleeding during brushing or flossing indicates gingivitis or early periodontitis.',
+        icon: 'AlertCircle',
+      },
+      {
+        title: 'Hot & Cold Sensitivity',
+        description: 'Sharp discomfort to cold water, tea, or sweets indicating enamel erosion or nerve exposure.',
+        icon: 'Thermometer',
+      },
+      {
+        title: 'Persistent Bad Breath',
+        description: 'Halitosis that persists after brushing may point to hidden bacterial infection or gum disease.',
+        icon: 'Wind',
+      },
+      {
+        title: 'Loose or Shifting Teeth',
+        description: 'Wobbling teeth or changes in bite alignment signal underlying bone or ligament loss.',
+        icon: 'Activity',
+      },
+      {
+        title: 'Cavities & Dark Spots',
+        description: 'Visible black spots, holes, or food trap areas that worsen if left untreated.',
+        icon: 'ShieldAlert',
+      },
+      {
+        title: 'Crooked or Crowded Teeth',
+        description: 'Misaligned bite or overlapping teeth causing jaw tension and aesthetic concerns.',
+        icon: 'Grid',
+      },
+      {
+        title: 'Missing Tooth Spaces',
+        description: 'Unreplaced gaps causing adjacent teeth to tilt and jaw bone resorption.',
+        icon: 'PlusCircle',
+      },
+    ],
     socialLinks: {
       instagram: 'https://instagram.com/shreeshyamdental',
       facebook: 'https://facebook.com/shreeshyamdental',
