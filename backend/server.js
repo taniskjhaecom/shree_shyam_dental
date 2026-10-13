@@ -69,6 +69,7 @@ app.use(
       const isAllowed =
         allowedOrigins.includes(cleanOrigin) ||
         cleanOrigin.endsWith('shreeshyamdentalhospital.com') ||
+        cleanOrigin.endsWith('.vercel.app') ||
         process.env.NODE_ENV !== 'production';
 
       if (isAllowed) {
@@ -152,6 +153,10 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`🚀 Shree Shyam Dental Hospital Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'test' && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Shree Shyam Dental Hospital Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
+  });
+}
+
+module.exports = app;

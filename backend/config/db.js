@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
+  if (mongoose.connection.readyState >= 1) {
+    return;
+  }
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/shree_shyam_dental', {
       autoIndex: true,
@@ -8,7 +11,6 @@ const connectDB = async () => {
     console.log(`[MongoDB] Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error(`[MongoDB Error]: ${error.message}`);
-    // Don't crash in development if mongodb isn't running yet; provide helpful logs
   }
 };
 
